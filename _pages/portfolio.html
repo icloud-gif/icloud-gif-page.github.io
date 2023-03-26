@@ -1,0 +1,38 @@
+---
+layout: default
+redirect_from:
+ - /portfolio.html
+permalink: /portfolio/
+---
+
+	<div id="wj-portfolio">
+		<div class="container">
+			<div class="row animate-box">
+				<div class="col-md-8 col-md-offset-2 text-center wj-heading">
+					<h2>Portfolio</h2>
+					<p>Here are some of the websites we have worked on.</p>
+				</div>
+			</div>
+			<div class="row">
+			{% for item in site.data.data.portfolio %}
+            <div class="col-md-4">
+					<div class="wj-portfolio animate-box">
+						<a href="{{item.link}}" target="_blank" rel="nofollow noreferrer noopener">
+							<div class="portfolio-entry" style="background-image: url(/images/{{item.image}});"></div>
+							<div class="portfolio-text">
+								<h3>{{item.name}}</h3>
+								<ul class="stuff">
+									<li><small><i class="icon-globe2"> </i>{{item.link}}</small></li>
+								</ul>
+							</div> 
+						</a>
+					</div>
+				</div>
+			{% endfor %}
+			</div>
+		</div>
+	</div>
+	
+{% include hire.html %}
+
+
